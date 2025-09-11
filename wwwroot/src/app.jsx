@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import ImagesList from './components/images-list'
 import Filters from './components/filters'
 import 'bootstrap/dist/css/bootstrap.css'
-
+import { FiltersProvider } from './filters-store'
 
 document.onreadystatechange = () => {
   if (document.readyState !== 'loading') {
@@ -15,9 +15,9 @@ const initApplication = () => {
   const rootContainer = document.querySelector('.container')
   const root = createRoot(rootContainer)
   root.render(
-    <>
+    <FiltersProvider>
       <Filters />
       <ImagesList />
-    </>
+    </FiltersProvider>
   )
 }

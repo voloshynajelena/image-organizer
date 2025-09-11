@@ -1,6 +1,5 @@
 import ImageTags from './image-tags'
 
-
 const ImageCard = ({ image, allTags }) => {
   return (
     <div className="image-item col-3 p-2">
@@ -16,11 +15,7 @@ const ImageCard = ({ image, allTags }) => {
         }}
         className="w-100 border border-secondary"
       />
-      <ImageTags
-        key={`${image.id}-tags`}
-        allTags={allTags}
-        tags={image.tags}
-      />
+      <ImageTags key={`${image.id}-tags`} allTags={allTags} tags={image.tags} />
     </div>
   )
 }
